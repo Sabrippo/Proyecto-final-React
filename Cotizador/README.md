@@ -1,15 +1,8 @@
-# cotizador-hogar
-Cotizador simple para seguros de hogar.
+# React + Vite
 
-## Descripción del proyecto.
-Este proyecto es un modelo para utilizar como ejemplo en la diplomatura desarrollador frontend de UNTREF. 
-En el mismo se integra el uso de las siguientes tecnologías:
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-* Vanilla JavaScript
-* Sugar Syntax de **ES6>**
-* **Fetch Data** sobre un archivo **JSON local**, combinado con un **Array de objetos** (también local)
-  (_lo anterior está realizado para saltar la limitación de Github Pages en el uso de Fetch Local_)
-* Una **Clase JS** basada en constructor
-* Ejemplo de uso de **LocalStorage** y **JSON.stringify** 
-* Integración de la librería **Sweet Alert**
-* Integración de la librería **Toastify**
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
