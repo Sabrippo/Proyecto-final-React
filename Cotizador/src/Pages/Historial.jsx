@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Workshop - Cotizador</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/home.png" type="image/png">
-    <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/historial.js"></script>
-</head>
-<body>
-    <h1 class="center separador">Ver Historial 📋</h1>
-    <div class=" center div-cotizador">
+import React from 'react';
+export default function Historial() {
+    return (
+        <div>
+            <h1 className="center separador">Ver Historial 📋</h1>
+    <div className=" center div-cotizador">
         <table>
             <thead>
                 <tr>
@@ -31,9 +24,10 @@
                 </tr>
             </tbody>
         </table>
-        <div class="center separador">
-            <a  href="index.html"><button class="button button-outline">VOLVER</button></a>
+        <div className="center separador">
+            <a  href="index.html"><button className="button button-outline">VOLVER</button></a>
         </div>
     </div>
-</body>
-</html>
+        </div>
+    )
+}
