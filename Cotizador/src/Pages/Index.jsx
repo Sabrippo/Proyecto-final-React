@@ -2,13 +2,16 @@ import { useState } from "react";
 
 export default function Index() {
 const [data, setData] = useState({
-    propiedad: 0,
-    ubicacion: 0,
+    factorPropiedad:0,
+    factorUbicacion: 0,
     metros2: 0,
     costoM2: 35.86,
-    poliza: 0.00,
-    
+    poliza: 0.00,    
 });   
+const cotizarPoliza = () => { 
+const poliza = data.costoM2 * data.factorPropiedad * data.factorUbicacion * data.metros2
+  setData({...data, poliza:poliza})     
+}
 
     return (
         <div>
@@ -27,7 +30,7 @@ const [data, setData] = useState({
                 <label htmlFor="metros2">Ingresa los Metros cuadrados:</label>
                     <input type="number" id="metros2" min="20" max="500" required/>
                 <div className="center separador">
-                    <button className="button button-outline">Cotizar</button>
+                    <button onClick={cotizarPoliza} className="button button-outline">Cotizar</button>
                 </div>
                 <div className="center separador">
                     <p className="importe">Precio estimado: $ <span id="valorPoliza">{data.poliza.toFixed(2)}</span> <span className="guardar ocultar" title="Guardar en historial">💾</span></p>
