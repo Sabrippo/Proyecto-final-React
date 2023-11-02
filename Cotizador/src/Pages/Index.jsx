@@ -1,4 +1,15 @@
+import { useState } from "react";
+
 export default function Index() {
+const [data, setData] = useState({
+    propiedad: 0,
+    ubicacion: 0,
+    metros2: 0,
+    costoM2: 35.86,
+    poliza: 0.00,
+    
+});   
+
     return (
         <div>
                 <div className="historial"><a href="historial.html"><span title="Ver Historial">📋</span></a></div>
@@ -19,7 +30,7 @@ export default function Index() {
                     <button className="button button-outline">Cotizar</button>
                 </div>
                 <div className="center separador">
-                    <p className="importe">Precio estimado: $ <span id="valorPoliza">0.00</span><span className="guardar ocultar" title="Guardar en historial">💾</span></p>
+                    <p className="importe">Precio estimado: $ <span id="valorPoliza">{data.poliza.toFixed(2)}</span> <span className="guardar ocultar" title="Guardar en historial">💾</span></p>
                 </div>
             </div>
         </div>
