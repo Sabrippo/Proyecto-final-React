@@ -24,11 +24,19 @@ export function Cotizador({
     const valorPoliza = resultado.toFixed(2);
     setSpanValorPoliza(valorPoliza);
     setCotizado(true);
+
+    Swal.fire({
+      icon: "success",
+      title: "Cotización realizada con éxito.",
+      showConfirmButton: false,
+      timer: 3500,
+      width: "240px",
+    });
   };
 
   const guardar = () => {
     if (cotizado) {
-      const agragarCotizacion = {
+      const agregarCotizacion = {
         fecha: new Date().toLocaleDateString(),
         propiedad: selectPropiedad,
         ubicacion: selectUbicacion,
@@ -36,55 +44,36 @@ export function Cotizador({
         poliza: spanValorPoliza,
       };
       const cotizaciones =
-        JSON.parse(localStorage.getItem("cotizacion")) || "[]";
-      cotizaciones.push(agragarCotizacion);
+        JSON.parse(localStorage.getItem("cotizacion")) || [];
+      cotizaciones.push(agregarCotizacion);
       localStorage.setItem("cotizacion", JSON.stringify(cotizaciones));
+
+      Toastify({
+        text: "Cotización guardada.",
+        duration: 4000,
+        newWindow: true,
+        gravity: "top",
+        position: "right",
+        style: {
+          background: "CornflowerBlue",
+        },
+      }).showToast();
+
     }
-  };
-  {
-    /* SWEETALERT */
-  }
-  const handleClick = (title, icon) => {
-      cotizar();
-      Swal.fire({
-        icon: "",
-        title: "Cotización realizada con éxito.",
-        showConfirmButton: false,
-        timer: 1000,
-        width: "240px",
-      });
-    };
-
-  {
-    /* TOASTIFY */
-  }
-  const toast = () => {
-    guardar();
-    Toastify({
-      text: "Cotización guardada.",
-      duration: 4000,
-      newWindow: true,
-      gravity: "top",
-      position: "right",
-      style: {
-        background: "CornflowerBlue",
-      },
-    }).showToast();
-  };
-
+  };  
+  
   return (
     <>
       <div className="center separador">
-        <button onClick={handleClick}>Cotizar</button>
+        <button onClick={cotizar}>Cotizar</button>
       </div>
       <div className="center separador">
         <p className="importe">
           Precio estimado: $ <span id="valorPoliza">{spanValorPoliza}</span>
           <span
-            className="guardar ocultar"
-            onClick={toast}
-            title="Guardar en historial"
-          >
+            className={`guardar ${cotizado ? "" : "ocultar"}`}
+            onClick={guardar}
+            title="Guardar en historial">
             💾
           </span>
         </p>

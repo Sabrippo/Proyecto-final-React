@@ -1,6 +1,15 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Historial() {
+    const Navigate = useNavigate();
+    const [cotizaciones, setcotizaciones] = useState([]);
+
+    useEffect(() => {
+          const cotizacionesGuardadas =
+          JSON.parse(localStorage.getItem("cotizacion")) || [];
+        setcotizaciones(cotizacionesGuardadas);
+      }, []);
     return (
         <div>
             <h1 className="center separador">Ver Historial 📋</h1>
@@ -16,17 +25,19 @@ export function Historial() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Aquí</td>
-                            <td>verás</td>
-                            <td>las</td>
-                            <td>cotizaciones</td>
-                            <td>realizadas</td>
-                        </tr>
+                    {cotizaciones.map(
+                        ({ fecha, propiedad, ubicacion, mts2, poliza }, index) => (
+                        <tr key={index}>
+                            <td>{fecha}</td>
+                            <td>{propiedad}</td>
+                            <td>{ubicacion}</td>
+                            <td>{mts2}</td>
+                            <td>{poliza}</td>
+                        </tr>))}
                     </tbody>
                 </table>
                 <div className="center separador">
-                    <Link to="http://localhost:5173/"><button className="button button-outline">VOLVER</button></Link>
+                    <button onClick={() => Navigate(-1)} className="button button-outline">VOLVER</button>
                 </div>
             </div>
         </div>
