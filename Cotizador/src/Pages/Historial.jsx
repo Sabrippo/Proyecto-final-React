@@ -10,6 +10,7 @@ export function Historial() {
           JSON.parse(localStorage.getItem("cotizacion")) || [];
         setcotizaciones(cotizacionesGuardadas);
       }, []);
+    const borrar = () => {localStorage.clear(); setcotizaciones([])}; 
     return (
         <div>
             <h1 className="center separador">Ver Historial 📋</h1>
@@ -38,6 +39,7 @@ export function Historial() {
                 </table>
                 <div className="center separador">
                     <button onClick={() => Navigate(-1)} className="button button-outline">VOLVER</button>
+                    <button onClick={borrar}style={{ marginLeft: '10px' }}>Restaurar historial</button>
                 </div>
             </div>
         </div>

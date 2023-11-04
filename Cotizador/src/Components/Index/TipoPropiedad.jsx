@@ -1,4 +1,4 @@
-import React from 'react';
+
 export function TipoPropiedad({datos, setPropiedad}) {
     const handleChange = (e) => {
         setPropiedad(e.target.value)};
@@ -6,7 +6,7 @@ export function TipoPropiedad({datos, setPropiedad}) {
         <div>
             <label htmlFor="propiedad">Selecciona el tipo de propiedad</label>
                 <select id="propiedad" onChange={handleChange}>
-                    <option disabled>...</option>
+                    <option selected disabled>...</option>
                         {datos.map((item, index) => (
                     <option key={index} value={item.tipo}>
                         {item.tipo}
