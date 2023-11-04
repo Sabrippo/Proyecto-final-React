@@ -3,6 +3,7 @@ import {TipoPropiedad} from "../Components/Index/TipoPropiedad";
 import {Ubicacion} from "../Components/Index/Ubicacion";
 import {MetrosCuadrados} from "../Components/Index/MetrosCuadrados";
 import { Cotizador } from "../Components/Index/Cotizador";
+import { Link } from "react-router-dom";
 
 export function Index() {
     const [selectPropiedad, setSelectPropiedad] = useState("...");
@@ -28,7 +29,7 @@ export function Index() {
 
     return (
         <div>
-                <div className="historial"><a href="historial.html"><span title="Ver Historial">📋</span></a></div>
+                <div className="historial"><Link to="http://localhost:5173/historial"><span title="Ver Historial">📋</span></Link></div>
                 <h1 className="center separador">Seguros del hogar 🏡</h1>
             <div className=" center div-cotizador">
                 <h2 className="center separador">Completa los datos solicitados</h2>

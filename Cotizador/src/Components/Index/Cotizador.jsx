@@ -50,7 +50,7 @@ export function Cotizador({
         icon: "",
         title: "Cotización realizada con éxito.",
         showConfirmButton: false,
-        timer: 3500,
+        timer: 1000,
         width: "240px",
       });
     };
