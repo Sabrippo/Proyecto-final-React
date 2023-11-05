@@ -8,34 +8,60 @@
 
 html {
     min-height: 100%;
-    background-color: rgb(126, 88, 161);
+    background-image: url(../public/Img/Barrio\ en\ marron.jpg);
+    background-size: cover;
 }
-
+  
 .center {
     text-align: center;
 }
 
 h1 {
-    font-weight: 400;
+    font-weight: 600;
     color: whitesmoke;
+    border: 2px solid #324001;
+    background-color: #324001;
 }
-
+h2 {
+    color: #324001;
+}
 label {
     font-weight: 400;
-    color: black;
+    color: #324001;
+    border-color: #324001;
 }
-
+.historial {
+    margin-right: 20px;
+    position: relative;
+   
+}
 .div-cotizador {
     margin: auto;
     max-width: 900px;
-    background-color: white;
-    /* margin-left: 5%;
-    margin-right: 5%; */
+    background-color: whitesmoke;
     padding: 10px;
-    border-color: whitesmoke;
+    border-color: #A9BF04;
     box-shadow: 26px 28px 15px -8px rgba(0,0,0,0.15);
     border-radius: 0.7rem;
-}
+    }
+thead {
+    color:#324001
+}    
+#propiedad{
+    border-color: #324001;   
+    }
+#ubicacion {
+    border-color: #324001;   
+    & :active {
+        color: #324001;
+    }
+} 
+#metros2 {
+    border-color: #324001;
+    & :active {
+        color: #324001;
+    }
+}   
 
 div.historial {
     cursor: pointer;
@@ -61,7 +87,7 @@ select, input {
 }
 
 .importe {
-    color: blueviolet;
+    color: #324001;
     font-size: x-large;
     font-weight: 700;
 }
@@ -75,16 +101,18 @@ select, input {
 .ocultar {
     display: none;
 }
-
+button {
+    background-color: #324001;
+    border-color: #A9BF04;
+}
 button:hover {
     color: whitesmoke !important;
-    background-color: blueviolet !important;
+    background-color: #667302;
 }
 
 button:active {
     background-color: black !important;
 }
-
-.text-rojo {
-    color: red !important;
+.button-outline{
+    background-color: #667302;
 }

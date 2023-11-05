@@ -12,7 +12,6 @@ export function Cotizador({
   setSpanValorPoliza,
 }) {
   const [cotizado, setCotizado] = useState(false);
-
   const cotizar = () => {
     const factorPropiedad = propiedadData.find(
       (item) => item.tipo === selectPropiedad
@@ -29,11 +28,10 @@ export function Cotizador({
       icon: "success",
       title: "Cotización realizada con éxito.",
       showConfirmButton: false,
-      timer: 3500,
+      timer: 1000,
       width: "240px",
     });
   };
-
   const guardar = () => {
     if (cotizado) {
       const agregarCotizacion = {
@@ -43,14 +41,14 @@ export function Cotizador({
         mts2: inputMts2,
         poliza: spanValorPoliza,
       };
-      const cotizaciones =
-        JSON.parse(localStorage.getItem("cotizacion")) || [];
+  const cotizaciones =
+      JSON.parse(localStorage.getItem("cotizacion")) || [];
       cotizaciones.push(agregarCotizacion);
       localStorage.setItem("cotizacion", JSON.stringify(cotizaciones));
 
       Toastify({
         text: "Cotización guardada.",
-        duration: 4000,
+        duration: 1000,
         newWindow: true,
         gravity: "top",
         position: "right",
@@ -58,9 +56,10 @@ export function Cotizador({
           background: "CornflowerBlue",
         },
       }).showToast();
-
     }
   };  
+  
+  
   
   return (
     <>
@@ -74,7 +73,7 @@ export function Cotizador({
             className={`guardar ${cotizado ? "" : "ocultar"}`}
             onClick={guardar}
             title="Guardar en historial">
-            💾
+            <img src="../public/Img/diskette.png" alt="diskette"/>
           </span>
         </p>
       </div>

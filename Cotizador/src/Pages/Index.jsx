@@ -29,8 +29,8 @@ export function Index() {
 
     return (
         <div>
-                <div className="historial"><Link to="/historial"><span title="Ver Historial">📋</span></Link></div>
-                <h1 className="center separador">Seguros del hogar 🏡</h1>
+                <div className="historial"><Link to="/historial"><span title="Ver Historial"><img src="../public/Img/spinner.gif" alt="" /></span></Link></div>
+                <h1 className="center separador">Seguros del hogar </h1>
             <div className=" center div-cotizador">
                 <h2 className="center separador">Completa los datos solicitados</h2>
                     <TipoPropiedad datos={propiedadData} setPropiedad={setSelectPropiedad} />
