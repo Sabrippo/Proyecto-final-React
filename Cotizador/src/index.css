@@ -116,3 +116,7 @@ button:active {
 .button-outline{
     background-color: #667302;
 }
+.my-custom-popup-class {
+    background-color: rgb(128, 0, 0);
+    color: white;
+  }

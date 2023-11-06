@@ -26,7 +26,7 @@ export function Historial() {
                         </tr>
                     </thead>
                     <tbody>
-                    {cotizaciones.map(
+                        {cotizaciones.map(
                         ({ fecha, propiedad, ubicacion, mts2, poliza }, index) => (
                         <tr key={index}>
                             <td>{fecha}</td>
